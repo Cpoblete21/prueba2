@@ -20,7 +20,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-1  
+          aws-region: us-east-1
 
       # Log in to Amazon ECR
       - name: Login to Amazon ECR
@@ -30,7 +30,7 @@ jobs:
       # Build Docker image
       - name: Build Docker image
         run: |
-          docker build -t ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.comdevops/prueba2:latest .
+          docker build -t ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/devops/prueba2:latest .
 
       # Push Docker image to ECR
       - name: Push Docker image to ECR
@@ -42,7 +42,8 @@ jobs:
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
           cluster: cluster-prueba2-devops  
-          service: serviceprueba2 
-          task-definition: 4af045767c8f41c5bdc2a588e0a1b9f3  # Task definition name
-          container-name: nginx-container # Name of the container inside the task
+          service: serviceprueba2
+          task-definition: 4af045767c8f41c5bdc2a588e0a1b9f3
+          container-name: nginx-container
           container-image: ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/devops/prueba2:latest
+
