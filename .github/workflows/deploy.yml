@@ -20,7 +20,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-1  # Make sure this is the correct region for your setup
+          aws-region: us-east-1  
 
       # Log in to Amazon ECR
       - name: Login to Amazon ECR
@@ -41,8 +41,8 @@ jobs:
       - name: Deploy to ECS
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
-          cluster: nginx-cluster  # Your ECS cluster name
-          service: nginx-service  # Your ECS service name
-          task-definition: nginx-task  # Task definition name
-          container-name: nginx-container  # Name of the container inside the task
+          cluster: cluster-prueba2-devops  
+          service: serviceprueba2 
+          task-definition: 4af045767c8f41c5bdc2a588e0a1b9f3  # Task definition name
+          container-name: nginx-container # Name of the container inside the task
           container-image: ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/nginx-repo:latest
