@@ -45,4 +45,4 @@ jobs:
           service: serviceprueba2 
           task-definition: 4af045767c8f41c5bdc2a588e0a1b9f3  # Task definition name
           container-name: nginx-container # Name of the container inside the task
-          container-image: ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/nginx-repo:latest
+          container-image: ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/devops/prueba2:latest
