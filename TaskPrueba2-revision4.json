@@ -30,6 +30,6 @@
     ],
     "registeredAt": "2024-12-23T00:23:26.435Z",
     "registeredBy": "arn:aws:iam::354918398201:user/cpoblete",
-    "enableFaultInjection": false,
+    "enableFaultInjection": True,
     "tags": []
 }
