@@ -37,18 +37,6 @@ jobs:
         run: |
           docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/devops/prueba2:latest
 
-      # Register ECS Task Definition (if necessary)
-      - name: Register ECS task definition
-        run: |
-          aws ecs register-task-definition \
-            --family TaskPrueba2 \
-            --container-definitions '[{
-              "name": "nginx-container",
-              "image": "${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/devops/prueba2:latest",
-              "memory": 512,
-              "cpu": 256,
-              "essential": true
-            }]'
 
       # Deploy to ECS (using the ECS Task Definition family)
       - name: Deploy to ECS
