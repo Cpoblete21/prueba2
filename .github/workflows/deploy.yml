@@ -37,11 +37,7 @@ jobs:
         run: |
           docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/devops/prueba2:latest
 
-      # Register the task definition from the JSON file
-      - name: Register ECS Task Definition
-        run: |
-          aws ecs register-task-definition \
-            --cli-input-json TaskPrueba2-revision4.json
+
             
       # Deploy to ECS (using the ECS Task Definition family)
       - name: Deploy to ECS
@@ -49,4 +45,4 @@ jobs:
         with:
           cluster: cluster-prueba2-devops
           service: serviceprueba2
-          task-definition: /TaskPrueba2-revision4.json
+          task-definition: ./TaskPrueba2-revision4.json
