@@ -44,4 +44,4 @@ jobs:
         with:
           cluster: cluster-prueba2-devops
           service: serviceprueba2
-          task-definition: arn:aws:ecs:us-east-1:354918398201:task/cluster-prueba2-devops/4af045767c8f41c5bdc2a588e0a1b9f3
+          task-definition: /TaskPrueba2-revision4.json
