@@ -43,7 +43,7 @@ jobs:
         with:
           cluster: cluster-prueba2-devops  
           service: serviceprueba2
-          task-definition: TaskPrueba2 
+          task-definition: arn:aws:ecs:us-east-1:354918398201:task-definition/TaskPrueba2:1
           container-name: nginx-container
           container-image: ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/devops/prueba2:latest
 
