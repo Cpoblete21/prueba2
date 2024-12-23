@@ -1,0 +1,35 @@
+{
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:354918398201:task-definition/TaskPrueba2:4",
+    "containerDefinitions": [
+        {
+            "name": "nginx-container",
+            "image": "354918398201.dkr.ecr.us-east-1.amazonaws.com/devops/prueba2:latest",
+            "cpu": 256,
+            "memory": 512,
+            "portMappings": [],
+            "essential": true,
+            "environment": [],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "systemControls": []
+        }
+    ],
+    "family": "TaskPrueba2",
+    "revision": 4,
+    "volumes": [],
+    "status": "ACTIVE",
+    "requiresAttributes": [
+        {
+            "name": "com.amazonaws.ecs.capability.ecr-auth"
+        }
+    ],
+    "placementConstraints": [],
+    "compatibilities": [
+        "EXTERNAL",
+        "EC2"
+    ],
+    "registeredAt": "2024-12-23T00:23:26.435Z",
+    "registeredBy": "arn:aws:iam::354918398201:user/cpoblete",
+    "enableFaultInjection": false,
+    "tags": []
+}
