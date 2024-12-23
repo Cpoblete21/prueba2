@@ -43,7 +43,7 @@ jobs:
         with:
           cluster: cluster-prueba2-devops  
           service: serviceprueba2
-          task-definition: 4af045767c8f41c5bdc2a588e0a1b9f3
+          task-definition: TaskPrueba2 
           container-name: nginx-container
           container-image: ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/devops/prueba2:latest
 
