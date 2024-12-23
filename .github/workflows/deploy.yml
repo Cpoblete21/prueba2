@@ -41,7 +41,7 @@ jobs:
       - name: Register ECS Task Definition
         run: |
           aws ecs register-task-definition \
-            --cli-input-json file://TaskPrueba2-revision4.json
+            --cli-input-json TaskPrueba2-revision4.json
             
       # Deploy to ECS (using the ECS Task Definition family)
       - name: Deploy to ECS
