@@ -20,7 +20,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-1
+          aws-region: us-east-1  
 
       # Log in to Amazon ECR
       - name: Login to Amazon ECR
@@ -37,13 +37,13 @@ jobs:
         run: |
           docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/devops/prueba2:latest
 
-      # Deploy to ECS
+
+
+      # Deploy to ECS (using the ECS Task Definition family)
       - name: Deploy to ECS
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
-          cluster: cluster-prueba2-devops  
+          cluster: cluster-prueba2-devops
           service: serviceprueba2
-          task-definition: arn:aws:ecs:us-east-1:354918398201:task-definition/TaskPrueba2
-          container-name: nginx-container
-          container-image: ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/devops/prueba2:latest
+          task-definition: TaskPrueba2  # Use the task definition family name here
 
